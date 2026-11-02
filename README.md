@@ -7,7 +7,7 @@ The agent key is an SPL delegate on your USDC account. It can spend the allowanc
 ## Start
 
 ```bash
-npm i -g github:ernesthayken/budgie-agent
+npm i -g github:Budgie-App-Solana/budgie-agent
 budgie init                 # makes the agent key, prints its address
 budgie owner <your wallet>  # the wallet that holds the USDC
 budgie limit 0.10           # the most it signs for one call
@@ -20,7 +20,7 @@ Set the budget on the [Budgie site](https://budgieapp.fun): connect your wallet,
 ## MCP
 
 ```json
-{ "mcpServers": { "budgie": { "command": "npx", "args": ["-y", "github:ernesthayken/budgie-agent", "mcp"] } } }
+{ "mcpServers": { "budgie": { "command": "npx", "args": ["-y", "github:Budgie-App-Solana/budgie-agent", "mcp"] } } }
 ```
 
 Tools: `budgie_resources`, `budgie_budget`, `budgie_call`, `budgie_pay`.
