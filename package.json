@@ -1,0 +1,14 @@
+{
+  "name": "budgie-agent",
+  "version": "0.1.0",
+  "description": "Pay x402 APIs on Solana from an on-chain USDC budget. CLI, SDK and MCP server.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "budgie": "cli.mjs" },
+  "main": "budgie.mjs",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4"
+  }
+}
