@@ -57,9 +57,9 @@ export async function signPayment(cfg, req, conn) {
 }
 
 // Pays any x402 endpoint that takes USDC on Solana. Refuses anything above maxPrice before signing.
-export async function pay(cfg, url, body = {}, { confirm } = {}) {
+export async function pay(cfg, url, body = {}, { confirm, headers = {} } = {}) {
   if (!cfg?.owner) throw new Error('no_owner: run `budgie owner <your wallet>` first');
-  const init = { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) };
+  const init = { method: 'POST', headers: { 'content-type': 'application/json', ...headers }, body: JSON.stringify(body) };
   let res = await fetch(url, init);
   if (res.status !== 402) return res.json();
   const quote = await res.json();
@@ -76,6 +76,7 @@ export async function pay(cfg, url, body = {}, { confirm } = {}) {
   return res.json();
 }
 
-export const call = (cfg, id, input, opts) => pay(cfg, `${BASE_URL}/v1/${id}`, input, opts);
+// Only Budgie hears the owner wallet, for the holder price. Other x402 services never get it.
+export const call = (cfg, id, input, opts) => pay(cfg, `${BASE_URL}/v1/${id}`, input, { ...opts, headers: { 'x-budgie-owner': cfg.owner } });
 export const resources = async () => (await (await fetch(`${BASE_URL}/v1/resources`)).json()).data;
 export const budget = async (cfg) => (await fetch(`${BASE_URL}/api/budget?owner=${cfg.owner}`)).json();
