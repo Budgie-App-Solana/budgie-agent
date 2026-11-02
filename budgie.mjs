@@ -9,7 +9,7 @@ import {
 } from '@solana/web3.js';
 import { createTransferCheckedInstruction, getAssociatedTokenAddressSync } from '@solana/spl-token';
 
-export const BASE_URL = process.env.BUDGIE_URL || 'https://budgie-api.orchard-api.workers.dev';
+export const BASE_URL = process.env.BUDGIE_URL || 'https://budgieapp.fun';
 const RPC = process.env.BUDGIE_RPC || 'https://solana-rpc.publicnode.com';
 const USDC = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
 const NETWORK = 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp';

@@ -15,7 +15,7 @@ budgie resources
 budgie call token-risk mint=DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263
 ```
 
-Set the budget on the [Budgie site](https://budgie-api.orchard-api.workers.dev): connect your wallet, paste the agent address and sign once.
+Set the budget on the [Budgie site](https://budgieapp.fun): connect your wallet, paste the agent address and sign once.
 
 ## MCP
 
